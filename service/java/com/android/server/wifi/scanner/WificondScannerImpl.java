@@ -554,7 +554,7 @@ public class WificondScannerImpl extends WifiScannerImpl implements Handler.Call
             for (int i = 0; i < mNativeScanResults.size(); ++i) {
                 ScanResult result = mNativeScanResults.get(i).getScanResult();
                 long timestamp_ms = result.timestamp / 1000; // convert us -> ms
-                if (timestamp_ms > mLastScanSettings.startTime) {
+                if (timestamp_ms > mLastScanSettings.startTime || true) {
                     if (mLastScanSettings.hwPnoScanActive) {
                         hwPnoScanResults.add(result);
                     }
